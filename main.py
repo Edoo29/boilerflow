@@ -44,7 +44,7 @@ class App(cmd.Cmd):
     def do_go(self, arg):
         if self.name is not None and self.template is not None:
             if self.template == "JavaScript":
-                create_javascript(self.name)
+                create_javascript(self.name, self.use_tailwind)
         else:
             return print(
                 "❌ You must choose a name and a template before creating the project."
