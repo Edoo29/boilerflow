@@ -9,15 +9,14 @@ js = javascript["index.js"]
 def create_javascript(name):
     print("✨ Project creation started...")
     print()
-    os.system("npm init -y")
-    print("✅ Project created successfully!")
-    print()
-    print('✨ Now type "npm install" to install the dependencies.')
 
     # Create folders
     os.mkdir(name)
     os.mkdir(f"{name}/src")
     os.mkdir(f"{name}/css")
+
+    # Initialize NPM
+    os.system(f"cd {name} && npm init -y")
 
     # Create files
     # HTML
@@ -29,3 +28,8 @@ def create_javascript(name):
     # JavaScript
     with open(f"{name}/src/index.js", "w") as f:
         f.write(js)
+
+    print("✅ Project created successfully!")
+    print(f'✨ Now type cd "{name}" and run "npm install" to install the dependencies.')
+    print()
+    exit()
